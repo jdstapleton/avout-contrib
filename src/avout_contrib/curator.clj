@@ -25,4 +25,6 @@
     (reify client/ClientHandle
       (getClient [this]
         (.blockUntilConnectedOrTimedOut curator)
-        (.getZooKeeper curator)))))
+        (.getZooKeeper curator))
+      (close [this]
+        (.close curator)))))
