@@ -15,7 +15,7 @@
   Calls to getClient will always return a Zookeeper instance that is connected and valid, unless an
   unrecoverable exception occured."
   [connection-string & {:keys [session-timeout-ms connection-timeout-ms watcher retry-policy]
-                        :or   {session-timeout-ms    5000
+                        :or   {session-timeout-ms    20000
                                connection-timeout-ms 10000
                                watcher               nil
                                retry-policy          (bounded-exponetial-backoff-retry 500 10000 20)}}]
